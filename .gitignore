@@ -1,0 +1,4 @@
+tmp/*.mid
+.ipynb_checkpoints
+__pycache__
+resources/*
