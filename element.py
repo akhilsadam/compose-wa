@@ -124,7 +124,9 @@ def plotAll(piece,mt=32,fgz=(20,4)):
     plt.plot(xc[0],marray)
     plt.xlabel("bars / measures into the piece")
     plt.ylabel("value")
+    plt.margins(0)
     plt.suptitle("Elementwise Graphs for Piece: Average Intensity")
     plt.show()
     plt.close()
     plot2(xc[0],dataf -marray,tracklabel=0,fgz=fgz,title="Elementwise Graphs for Piece - Demeaned")
+    return xc[0], dataf
