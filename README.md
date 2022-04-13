@@ -1,4 +1,7 @@
 # compose-wa
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/akhilsadam/compose-wa/HEAD?labpath=https%3A%2F%2Fgithub.com%2Fakhilsadam%2Fcompose-wa%2Fblob%2Fmain%2Fcompose-wa.ipynb)
+
 An prototype project for music exploration and composition.
 Contains application code for the COE 332 Final project. (I will add docstrings soon enough.)
 The element python file is the main file for now; to import routes, just do an `import element` and an `import musicpy` as necessary.
