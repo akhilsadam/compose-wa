@@ -1,4 +1,5 @@
 musicpy
+nrclex
 numpy
 matplotlib
 jpcm
