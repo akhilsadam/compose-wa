@@ -1,5 +1,5 @@
 # very limited set, and basic approach (note we have not included 'disgust' which would arise from dissonance!)
-import utils as ul
+from . import utils as ul
 import numpy as np
 # need to iterate top-down to select properly
 def obj(inp):

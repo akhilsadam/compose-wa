@@ -1,4 +1,6 @@
 # types
+import nltk
+nltk.download('punkt')
 from nrclex import NRCLex as nl
 import numpy as np
 import jpcm
@@ -9,9 +11,7 @@ cs = [jpcm.maps.murasaki,jpcm.maps.nakabeni,None,jpcm.maps.chigusa_iro,jpcm.maps
 n_keys = len(keys)
 
 def norm(v):
-    if any(v) != 0:
-        return v/np.linalg.norm(v)
-    return v
+    return v/np.linalg.norm(v) if any(v) != 0 else v
 
 def nlparse(tx):
     item = nl(text=tx)

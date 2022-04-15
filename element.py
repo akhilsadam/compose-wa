@@ -7,8 +7,8 @@ from matplotlib import pyplot as plt
 backend = plt.get_backend()
 print(backend)
 
-import utils as ul
-import chords as cd
+from . import utils as ul
+from . import chords as cd
 import pretty_midi
 import libfmp.c1
 
