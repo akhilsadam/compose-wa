@@ -21,7 +21,7 @@ plt.switch_backend(backend)
 tmp_dir = "tmp/"
 
 smp = sampler(5, name='sfz')
-names = ['000_Z3_Piano.sfz','046_Z3_Harp.sfz','koto.sf2','shamisen.sf2','ruteki.sf2','air_gamelan.sf2']
+names = ['koto.sf2','shamisen.sf2','ruteki.sf2','air_gamelan.sf2']
 for i in range(len(names)):
     logger.info(f"Loading : {names[i]}")
     smp.load(i,f'app/static/sfz/{names[i]}')
