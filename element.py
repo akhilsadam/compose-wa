@@ -21,11 +21,10 @@ plt.switch_backend(backend)
 tmp_dir = "tmp/"
 
 smp = sampler(5, name='sfz')
-names = ['koto.sf2','shamisen.sf2','ruteki.sf2','air_gamelan.sf2']
-smp.load(0,esi='app/static/sfz/b-211.esi')
+names = ['000_Z3_Piano.sf2','046_Z3_Harp.sfz','koto.sf2','shamisen.sf2','ruteki.sf2','air_gamelan.sf2']
 for i in range(len(names)):
     logger.info(f"Loading : {names[i]}")
-    smp.load(i+1,f'app/static/sfz/{names[i]}')
+    smp.load(i,f'app/static/sfz/{names[i]}')
 
 def load(midi):
     return mp.read(midi),pretty_midi.PrettyMIDI(midi)
