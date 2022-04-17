@@ -1,4 +1,5 @@
 from musicpy import *
+from musicpy.sampler import *
 import numpy as np
 import scipy.signal as sig
 
@@ -12,9 +13,19 @@ from . import chords as cd
 import pretty_midi
 import libfmp.c1
 
+import logging
+logger = logging.getLogger('root')
+
 plt.switch_backend(backend)
 
 tmp_dir = "tmp/"
+
+smp = sampler(5, name='sfz')
+names = ['koto.sf2','shamisen.sf2','ruteki.sf2','air_gamelan.sf2']
+smp.load(0,esi='app/static/sfz/b-211.esi')
+for i in range(len(names)):
+    logger.info(f"Loading : {names[i]}")
+    smp.load(i+1,f'app/static/sfz/{names[i]}')
 
 def load(midi):
     return mp.read(midi),pretty_midi.PrettyMIDI(midi)
@@ -130,3 +141,6 @@ def plotAll(piece,mt=32,fgz=(20,4)):
     plt.close()
     plot2(xc[0],dataf -marray,tracklabel=0,fgz=fgz,title="Elementwise Graphs for Piece - Demeaned")
     return xc[0], dataf
+
+def mp3(piece,name): 
+    smp.export(obj=piece,mode='mp3',action='export',filename=f'{name}.mp3')
